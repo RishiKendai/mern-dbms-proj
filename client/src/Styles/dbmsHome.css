@@ -1,0 +1,71 @@
+.dbms-home {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: hsl(240, 59%, 93%);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --btn-primary: hsl(189, 99%, 42%);
+  --btn-secondary: hsl(189, 99%, 45%);
+  --btn-shadow: hsl(189, 99%, 48%);
+}
+.div-1 {
+  width: clamp(880px, 50%, 100%);
+  padding: 8px 15px 26px;
+  box-shadow: 0 7px 25px #00000042;
+  border-radius: 7px;
+}
+
+.mongodb-logo {
+  display: block;
+  margin: 15px auto 15px auto;
+  width: clamp(250px, 50%, 300px);
+}
+
+.div-1 h3 {
+  text-align: center;
+}
+.div-1 .buttons {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 15px;
+  align-self: center;
+  justify-self: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+}
+
+.div-1 .buttons .button:focus {
+  transform: scale(0.9);
+}
+.div-1 .buttons .button {
+  border: none;
+  outline: none;
+  color: #232323;
+  border: 1px solid var(--btn-secondary);
+  box-shadow: 0 7px 25px hsla(0, 0%, 0%, 0.233);
+  margin: 10px 0 0 0;
+  padding: 6px 0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.div-1 .buttons .button h4,
+.button p {
+  margin: 0;
+}
+.button h4 {
+  font-size: 1.3rem;
+  font-weight: 0;
+  color: #0a444e;
+}
+
+
+.button p {
+  font-size: 0.8rem;
+  color: #005f72cb;
+  font-family: 'JetBrains Mono', monospace;
+}

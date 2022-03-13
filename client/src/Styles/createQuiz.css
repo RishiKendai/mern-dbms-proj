@@ -1,0 +1,90 @@
+.create-quiz {
+  /* position: fixed; */
+  width: 100%;
+  height: 100vh;
+  background: hsl(240, 59%, 93%);
+  font-family: 'Roboto', sans-serif;
+  padding-top: 2rem;
+  display: flex;
+  overflow: auto;
+  scrollbar-width: none;
+  justify-content: center;
+  /* align-items: center; */
+  align-items: baseline;
+  padding:  5rem auto;
+  --create-quiz-primary: hsl(189, 55%, 33%);
+  --btn-secondary: hsl(189, 99%, 45%);
+  --btn-shadow: hsl(189, 99%, 48%);
+}
+.create-quiz::-webkit-scrollbar{
+  display: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+}
+
+.create-quiz .quiz-div {
+  border: 1px solid var(--create-quiz-primary);
+  width: 100%;
+  border-radius: 5px;
+  height: auto;
+  margin-bottom: 1rem;
+  /* position: relative; */
+}
+
+.create-quiz header .close-btn {
+  align-self: center;
+  color: #333;
+  cursor: pointer;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+}
+.create-quiz header .close-btn:hover,
+.create-quiz header .close-btn:focus {
+  color: var(--btn-secondary);
+  text-shadow: 2px 2px 3.5px #00000048;
+}
+.create-quiz header h3 {
+  text-align: center;
+  margin: 0.3em auto;
+  color: #333;
+  font-size: clamp(1.8rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  font-family: 'Comic Neue', cursive;
+}
+
+.create-quiz .input-div {
+  width: 100%;
+  position: relative;
+}
+
+.create-quiz .input-div label {
+  position: absolute;
+}
+
+.create-quiz .quiz-div {
+  width: 65%;
+}
+.quiz-div .message {
+  position: absolute;
+  top: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  left: 50%;
+  transform: translate(-50%,0);
+  /* word-break: keep-all; */
+  white-space: nowrap;
+  background: red;
+}
+@media (max-width: 992px) {
+  .create-quiz {
+    display: block;
+    /* padding-top: 2rem; */
+  }
+  .create-quiz .quiz-div {
+    width: 100%;
+    overflow: auto;
+  }
+  .create-quiz header .fa-xmark {
+    cursor: auto;
+  }
+}

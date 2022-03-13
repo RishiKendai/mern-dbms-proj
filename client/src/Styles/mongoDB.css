@@ -1,0 +1,145 @@
+.mongo-page {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  scrollbar-width: none;
+  background: hsl(240, 59%, 93%);
+  font-family: 'Poppins', sans-serif;
+}
+.mongo-page::-webkit-scrollbar {
+  width: 0;
+  scroll-behavior: smooth;
+}
+/* .mongo-page .content-section {
+  background: navy;
+} */
+
+.mongo-page .mongo-logo {
+  display: block;
+  margin: 15px auto 15px auto;
+  height: 150px;
+  width: clamp(250px, 50%, 300px);
+}
+.mongo-page h4 {
+  color: #000;
+  font-weight: 600;
+  font-family: 'Montserrat';
+}
+.mongo-page p,
+.mongo-page ul li {
+  color: #0000008a;
+  margin: 20px auto;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+.mongo-page p.indent {
+  text-indent: 40px;
+}
+.mongo-page p,
+.mongo-page li {
+  line-height: 1.6;
+}
+.mongo-page p span {
+  color: #1a1a1a;
+}
+
+.mongo-page .feature-div{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  margin: 3rem auto;
+}
+.mongo-page .feature-div .side-img {
+  margin: 0 auto 15px auto;
+}
+.mongo-page .crud-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+.mongo-page .crud-div h5 {
+  color: #4b4a54;
+}
+.mongo-page .crud-div .crud-img {
+  width: clamp(350px, 55vw, 100%);
+  box-shadow: 0 4px 10px #00000046;
+  border-radius: 4px;
+  margin-bottom: 7px;
+}
+
+.mongo-page .grid-mongo-things {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 15px;
+  justify-content: center; */
+  display: flex;
+  flex-wrap: wrap;
+justify-content: center;
+}
+
+.mongo-page .mongo-things-div {
+  background: #ffffffaa;
+  flex: 1 2 2;
+  box-shadow: 0 10px 15px #0000003a;
+  margin: 17px 8px;
+  width: 300px;
+  border-radius: 6px;
+  display: flex;
+  padding: 10px 5px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+.mongo-page .mongo-things-div div {
+  height: 120px;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+.mongo-page .mongo-things-div p {
+  color: #000000e1;
+  padding: 0 4px;
+  font-family: sans-serif;
+}
+
+.mongo-page .mongo-things-div .mongo-things-imgs {
+  width: 200px;
+}
+
+@media (min-width: 780px) {
+  .mongo-page {
+    padding: 5% 15%;
+  }
+  .mongo-page p,
+  li {
+    line-height: 2;
+  }
+  .mongo-page .feature-div {
+    display: flex;
+    align-items: center;
+  }
+  .mongo-page .feature-div .side-img {
+    margin-right: 80px;
+  }
+
+  .mongo-page .feature-div .img-span {
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mongo-page .mongo-things-div {
+    width: 300px;
+  }
+}
+
+@media (max-width: 780px) {
+  .mongo-page .feature-div {
+    text-align: center;
+  }
+}

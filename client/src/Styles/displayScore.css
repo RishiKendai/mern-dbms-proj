@@ -1,0 +1,47 @@
+.scoreCard {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  align-items: center;
+  font-family: Poppins;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.155);
+  backdrop-filter: blur(5px);
+  width: clamp(370px, 50%, 400px);
+  box-shadow: 0 7px 25px #00000042;
+  border: 1px solid #00000025;
+}
+
+.scoreCard h3 {
+  color: hsl(0, 0%, 100%);
+  font-family: 900;
+  margin: 5px 0 7px 0;
+}
+
+.scoreCard h5 {
+  color: #fcc4e1;
+}
+.scoreCard p {
+  color: #e28ebb;
+}
+.scoreCard > div button {
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  letter-spacing: 1.5px;
+  color: #ffffffde;
+  margin-top: 15px;
+}
+.scoreCard > div .home {
+  margin-right: 10px;
+}
+.scoreCard > div .scoreboard {
+  background: hsla(328, 59%, 72%, 0.835);
+}
+
+.scoreCard > div .scoreboard:hover,
+.scoreCard > div .scoreboard:focus {
+  background: hsla(328, 69%, 69%, 0.835);
+}

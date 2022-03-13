@@ -1,0 +1,106 @@
+.admin-page {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: hsl(240, 59%, 93%);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --btn-primary: hsl(189, 99%, 42%);
+  --btn-secondary: hsl(189, 99%, 45%);
+  --btn-shadow: hsl(189, 99%, 48%);
+}
+
+/* Main Block */
+.admin-container {
+  background: hsl(240, 59%, 93%);
+  width: clamp(270px, 50%, 570px);
+  /* padding: 0.5em 0.5em 0 0.5em; */
+  border-radius: 4.5px;
+  box-shadow: 8px 8px 10px #00000048, -8px -8px 20px #ffffffc7;
+}
+.admin-container header h3 {
+  text-align: center;
+  margin: 0.3em auto;
+  color: #333;
+  font-size: clamp(1.8rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  font-family: 'Comic Neue', cursive;
+}
+.admin-container header h5 {
+  margin-left: 60%;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+.admin-container .btn-div {
+  display: grid;
+  justify-content: center;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
+}
+.admin-container .btn {
+  border: none;
+  width: 100%;
+  outline: none;
+  background: none;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  border-radius: 3px;
+  padding: 0.6em;
+  overflow: hidden;
+  margin: 0 0 0.5em 0;
+  cursor: pointer;
+  position: relative;
+}
+.fa-solid {
+  margin-right: 0.3em;
+  height: 100%;
+}
+.admin-container .btn-create {
+  background: var(--btn-primary);
+  color: hsl(189, 99%, 12%);
+}
+.admin-container .btn-create:hover,
+.admin-container .btn-create:focus {
+  color: #fff;
+  background: var(--btn-secondary);
+  box-shadow: 0 0 8px var(--btn-shadow);
+}
+
+.admin-container .btn-score {
+  background: none;
+  color: var(--btn-primary);
+  outline: 1px solid var(--btn-primary);
+}
+.admin-container .btn-score:hover,
+.admin-container .btn-score:focus {
+  color: #fff;
+  background: var(--btn-secondary);
+}
+
+.admin-container .footer {
+  width: 100%;
+  color: #fff;
+  margin-top: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  background: rgba(0, 0, 0, 0.521);
+}
+.admin-container .footer p {
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .admin-container .btn {
+    cursor: auto;
+  }
+  .admin-container .btn-create {
+    margin-top: 0.3em;
+  }
+  .admin-container header h5 {
+    margin-left: 50%;
+  }
+}

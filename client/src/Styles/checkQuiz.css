@@ -1,0 +1,168 @@
+.check-quiz {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: hsl(240, 59%, 93%);
+  font-family: 'Roboto', sans-serif;
+  overflow: auto;
+  display: flex;
+  scrollbar-width: none;
+  --btn-primary: hsl(189, 55%, 33%);
+  --btn-shadow: hsl(189, 99%, 48%);
+}
+.check-quiz .quiz-tab {
+  width: 100%;
+  position: relative;
+}
+
+.check-quiz header {
+  margin-bottom: 0.75rem;
+  position: -webkit-sticky;
+  position: fixed;
+  top: 0;
+  height: auto;
+  background: hsl(240, 59%, 93%);
+  width: 100%;
+}
+
+.check-quiz header h3 {
+  color: var(--btn-primary);
+  font-size: clamp(1.8rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  font-family: 'Comic Neue', cursive;
+  letter-spacing: 0.1rem;
+  margin: 0.3em auto;
+  text-align: center;
+  text-shadow: 0px 0px 2px var(--btn-shadow);
+}
+
+.check-quiz header .close-btn {
+  align-self: center;
+  color: #333;
+  cursor: pointer;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+}
+.check-quiz header .close-btn:hover,
+.check-quiz header .close-btn:focus {
+  color: var(--btn-secondary);
+  text-shadow: 2px 2px 3.5px #00000048;
+}
+
+.check-quiz .options-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.check-quiz .quiz-container {
+  border-radius: 7px;
+  box-shadow: 2px 4px 8px #00000048, -2px -4px 8px #ffffffa6;
+  margin-bottom: 2rem;
+}
+.check-quiz::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+}
+
+.check-quiz .quiz-tab .quiz-section {
+  padding-bottom: 8px;
+  margin-top: 65px;
+}
+
+.check-quiz .quiz-tab .question-tab {
+  margin-bottom: 1.5rem;
+  padding-top: 3px;
+  word-break: break-all;
+}
+
+.check-quiz .options-section {
+  margin-bottom: 1rem;
+}
+.check-quiz .options-section .options {
+  border: 1px solid rgba(128, 128, 128, 0.513);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.check-quiz .quiz-tab .edit-tab {
+  padding: 0.21rem;
+  display: flex;
+  cursor: pointer;
+  justify-content:flex-end;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+.check-quiz .edit-tab .edit-icon {
+  padding: 0.31rem;
+  border-right: 1px solid rgba(26, 38, 40, 0.281);
+}
+.check-quiz .edit-tab .delete-icon {
+  padding: 0.31rem;
+}
+.edit-icon,
+.delete-icon {
+  color: rgba(0, 0, 0, 0.411);
+  border: none;
+  background: none;
+}
+.check-quiz .options.correctAnswer {
+  color: #108149;
+  background: #b3fbae;
+  border: 1px solid #83f587;
+}
+
+.edit-tab .edit-icon:hover,
+.edit-tab .edit-icon:focus,
+.edit-tab .delete-icon:hover,
+.edit-tab .delete-icon:focus {
+  color: rgba(0, 0, 0, 0.813);
+}
+/* Delete Notification */
+.quiz-tab .outer-notification{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.quiz-tab .notification {
+  position: absolute;
+  background: #1af681;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 5px 0 5px 20px;
+
+  content: '';
+  top: 8px;
+  right: 5px;
+  z-index: 1;
+  width: clamp(300px, 50%, 340px);
+}
+.quiz-tab .notification ::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  z-index: -1;
+  inset: 0 0 0 13px;
+}
+.quiz-tab .notification .body {
+  align-items: center;
+  padding: 5px;
+}
+.quiz-tab .notification .fa-circle-check {
+  font-size: clamp(1.9rem, 2.5vw, 2rem);
+  margin: 0 10px 0 0;
+  color: #1af681;
+}
+.quiz-tab .notification .body > div p {
+  margin: 0;
+}
+.quiz-tab .notification .body > div .heading {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.quiz-tab .notification .fa-xmark {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 8px;
+}
