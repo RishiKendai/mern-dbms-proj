@@ -4,14 +4,12 @@
   height: 100vh;
   background: hsl(240, 59%, 93%);
   font-family: 'Roboto', sans-serif;
-  padding-top: 2rem;
   display: flex;
   overflow: auto;
   scrollbar-width: none;
   justify-content: center;
-  /* align-items: center; */
   align-items: baseline;
-  padding:  5rem auto;
+  padding-top: 2rem;
   --create-quiz-primary: hsl(189, 55%, 33%);
   --btn-secondary: hsl(189, 99%, 45%);
   --btn-shadow: hsl(189, 99%, 48%);
@@ -28,7 +26,6 @@
   border-radius: 5px;
   height: auto;
   margin-bottom: 1rem;
-  /* position: relative; */
 }
 
 .create-quiz header .close-btn {
@@ -78,7 +75,7 @@
 @media (max-width: 992px) {
   .create-quiz {
     display: block;
-    /* padding-top: 2rem; */
+    padding-top: 2rem;
   }
   .create-quiz .quiz-div {
     width: 100%;
