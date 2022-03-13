@@ -24,7 +24,7 @@ connection.once("open", () => {
 const addQuiz = require("./routes/quiz");
 
 
-app.use("/quiz", addQuiz);
+app.use('/quiz', addQuiz);
 
 
 if (process.env.NODE_ENV === "production") {

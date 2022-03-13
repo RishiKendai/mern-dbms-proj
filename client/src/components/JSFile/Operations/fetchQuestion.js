@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { baseURL } from './baseURL';
 
 async function getQuestions(setQuestion) {
     try {
-        const getQuestion = await axios.get("/quiz/");
+        const getQuestion = await axios.get(`${baseURL}/quiz/`);
         setQuestion(getQuestion.data);
         return getQuestion.data;
     } catch (e) {

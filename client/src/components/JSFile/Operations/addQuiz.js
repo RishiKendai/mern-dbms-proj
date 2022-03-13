@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
-
+import { baseURL } from './baseURL';
 export default async function addQuestion(
   question,
   option1,
@@ -20,7 +20,7 @@ export default async function addQuestion(
   };
   try {
     const newQuestion = await axios.post(
-      '/quiz/add-question',
+      `${baseURL}/quiz/add-question`,
       addQuestion
     );
     // console.log(newQuestion);

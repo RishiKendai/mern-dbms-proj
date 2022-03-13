@@ -28,7 +28,9 @@
 .play-quiz .quiz-question {
   word-break: break-all;
 }
-
+.play-quiz .quiz-question pre{
+font-family: 'Poppins';
+}
 .play-quiz .options-section {
   display: grid;
   grid-gap: 10px;

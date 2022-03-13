@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import '../Styles/quiz.css';
+import Loading from './Loading';
 
 import getQuestions from './JSFile/Operations/fetchQuestion';
 import addScore from './JSFile/Operations/addScore';
@@ -29,7 +30,9 @@ const QuestionComp = (props) => {
   return (
     <>
       {/* Questions */}
-      <div className="quiz-question">{props.question}</div>
+      <div className="quiz-question">
+        <pre>{props.question}</pre>
+      </div>
       {/* Options */}
       <div className="options-section">
         <button onClick={checkAnswer} className="options Option1">
@@ -53,6 +56,7 @@ const QuestionComp = (props) => {
 export default function Quiz() {
   const [questions, setQuestion] = useState([0]);
   const [currQuestions, setCurrQuestion] = useState([0]);
+  const [isLoading, setIsLoading] = useState(false);
   const [displayScore, setDisplayScore] = useState({
     active: false,
     playerName: ``,
@@ -66,7 +70,16 @@ export default function Quiz() {
 
   // Get Questions From the DB
   useEffect(() => {
-    getQuestions(setQuestion);
+     const getQuestionVar = async () => {
+       setIsLoading(true);
+       try {
+         await getQuestions(setQuestion);
+         setIsLoading(false);
+       } catch (e) {
+         console.log(e);
+       }
+     };
+     getQuestionVar();
   }, []);
   // To set the duplicate values in another state to iterate it
   useMemo(() => {
@@ -129,6 +142,7 @@ export default function Quiz() {
   return (
     <div className="play-quiz container-fluid">
       {/* Display the Score */}
+      { isLoading && <Loading />}
       {displayScore.active && <DisplayScore displayScore={displayScore} />}
       {/* Information tab */}
       <div className="information-tab">

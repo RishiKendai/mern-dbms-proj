@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function DisplayScore(props) {
   const [quote, setQuote] = useState();
+
   useEffect(() => {
     const topperQuote = [
       'Congratulations! 🥳',

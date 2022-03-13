@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
+import { baseURL } from './baseURL';
 
 export default async function addScore(playerName, score) {
   const addScore = {
@@ -8,7 +9,7 @@ export default async function addScore(playerName, score) {
   };
   try {
     const newScore = await axios.post(
-      '/quiz/scoreboard-scores/add',
+      `${baseURL} /quiz/scoreboard-scores/add`,
       addScore
     );
     return true;

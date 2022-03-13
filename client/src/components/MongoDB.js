@@ -22,7 +22,7 @@ function MongoDB() {
         <img src={mongoLogo} alt="mongoDB logo" className="mongo-logo"></img>
         <p>
           <span>
-            founded in 2007 by Dwight Merriman, Eliot Horowitz and Kevin Ryan –
+            Founded in 2007 by Dwight Merriman, Eliot Horowitz and Kevin Ryan –
             the team behind DoubleClick.
           </span>
         </p>

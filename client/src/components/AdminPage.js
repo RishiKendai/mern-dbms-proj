@@ -3,19 +3,32 @@ import '../Styles/adminPage.css';
 
 import { Link } from 'react-router-dom';
 import getScore from './JSFile/Operations/fetchScore';
+import Loading from './Loading';
 
 export default function AdminPage() {
   const [quizScore, setQuizScore] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getScore(setQuizScore);
-  }, [quizScore]);
+     const getScores = async () => {
+       setIsLoading(true);
+       try {
+         await getScore(setQuizScore);
+         setIsLoading(false);
+       } catch (e) {
+         console.log(e);
+       }
+     };
+     getScores();
+  }, []);
+
   return (
     <div className="admin-page">
+      {isLoading && <Loading />}
+
       <div className="admin-container">
         <header>
           <h3>Technical Quiz</h3>
-          {/* <h5>- Praveen Kumar</h5> */}
         </header>
         <div className="btn-div">
           <Link to="/21mca-dbms-create-tech-quiz">

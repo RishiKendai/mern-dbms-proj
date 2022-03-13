@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
+import { baseURL } from './baseURL';
 
 export default async function updateQuestion(
   question,
@@ -21,7 +22,7 @@ export default async function updateQuestion(
   };
   try {
     const newQuestion = await axios.put(
-      '/quiz/update-question/' + id,
+      `${baseURL}/quiz/update-question/` + id,
       addQuestion
     );
     // console.log(newQuestion);

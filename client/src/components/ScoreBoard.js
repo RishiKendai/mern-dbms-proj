@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/scoreBoard.css';
+import Loading from './Loading';
 
 import { Link } from 'react-router-dom';
 import getScore from './JSFile/Operations/fetchScore';
@@ -20,12 +21,24 @@ const ScoreTab = (props) => {
 
 export default function ScoreBoard() {
   const [quizScore, setQuizScore] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getScore(setQuizScore);
+    const getScores = async () => {
+      setIsLoading(true)
+      try {
+        await getScore(setQuizScore);
+        setIsLoading(false)
+      }
+      catch (e) {
+        console.log(e);
+      }
+    }
+    getScores()
   }, []);
   return (
     <div className="score-page">
+      {isLoading && <Loading />}
       <header className="d-flex">
         <h3>Quiz ScoreBoard</h3>
         <Link to="/21mca-myproj-dbms-technical-admin" className="close-btn">

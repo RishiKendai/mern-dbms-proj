@@ -4,6 +4,7 @@ import '../Styles/checkQuiz.css';
 import { Link } from 'react-router-dom';
 import getQuestions from './JSFile/Operations/fetchQuestion';
 import DeleteQuiz from './DeleteQuiz';
+import Loading from './Loading';
 // Question tab
 const QuestionTab = (props) => {
   function handleDelete() {
@@ -69,6 +70,7 @@ const QuestionTab = (props) => {
 export default function CheckQuiz() {
   const [question, setQuestion] = useState([]);
   const [isNotification, setIsNotification] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isDelete, setIsDelete] = useState({
     active: false,
     id: ``,
@@ -76,21 +78,30 @@ export default function CheckQuiz() {
   });
 
   useEffect(() => {
-    getQuestions(setQuestion);
-  }, []);
+    const fetchQuestions = async () => {
+      setIsLoading(true);
 
+      try {
+        await getQuestions(setQuestion);
+        setIsLoading(false)
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchQuestions();
+  }, [(isNotification)]);
 
   function handleNotification() {
     setIsNotification(false);
   }
-  isNotification && setTimeout(
-    () => {
+  isNotification &&
+    setTimeout(() => {
       setIsNotification(false);
-    }, 5000
-  );
+    }, 5000);
 
   return (
     <div className="check-quiz">
+      {isLoading && <Loading />}
       <section className="quiz-tab">
         {isNotification && (
           <div className="outer-notification">

@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { baseURL } from './baseURL';
 
 async function getScore(setScore) {
   try {
     const getScore = await axios.get(
-      '/quiz/scoreboard/scores/'
+      `${baseURL}/quiz/scoreboard/scores/`
     );
       setScore(getScore.data);
       return getScore.data

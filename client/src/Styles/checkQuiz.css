@@ -119,8 +119,9 @@
 }
 /* Delete Notification */
 .quiz-tab .outer-notification{
-  position: sticky;
-  top: 0;
+  position: fixed;
+  width: 100%;
+  height: auto;
   z-index: 1;
 }
 .quiz-tab .notification {
