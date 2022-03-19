@@ -16,21 +16,21 @@ function DbmsHome() {
         <h3>Team MongoDB</h3>
         <div className="buttons">
           <button
-            className="button btn-info"
+            className="button btn-col1"
             onClick={() => navigate('/21mca-myproj-dbms-mongoDB')}
           >
             <h4>Database</h4>
             <p>By Sankeertha</p>
           </button>
           <button
-            className="button btn-info"
+            className="button btn-col2"
             onClick={() => navigate('/21mca-myproj-dbms-technical-admin')}
           >
             <h4>Technical Quiz</h4>
             <p>By Praveen Kumar</p>
           </button>
           <button
-            className="button btn-info"
+            className="button btn-col3"
             onClick={() =>
               (window.location.href =
                 'https://youtube.com/embed/_sd8HsGGUI4?start=1&end=230&fs=1')

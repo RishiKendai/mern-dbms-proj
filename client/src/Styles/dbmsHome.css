@@ -44,28 +44,75 @@
 .div-1 .buttons .button {
   border: none;
   outline: none;
-  color: #232323;
-  border: 1px solid var(--btn-secondary);
-  box-shadow: 0 7px 25px hsla(0, 0%, 0%, 0.233);
+  color: #ffffff;
   margin: 10px 0 0 0;
   padding: 6px 0;
-  border-radius: 5px;
+  border-radius: 9px;
   font-size: 1.2rem;
+  position: relative;
+}
+.btn-col1{
+  background: #e030ac;
+  box-shadow: 2px 6px 15px #E755BB; 
+}
+.btn-col1::after{
+  background: #e030ac;
 }
 
+.btn-col2{
+  background: #6e35ca;
+  box-shadow: 2px 6px 15px #8757D4; 
+}
+.btn-col2::after{
+  background: #6e35ca;
+}
+
+
+.btn-col3{
+  background: #a91ad4;
+  box-shadow: 2px 6px 15px #B841DC; 
+}
+.btn-col3::after{
+  background: #a91ad4;
+}
+
+.div-1 .buttons .button::after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  filter: blur(20px);
+  z-index: -1;
+  transform: translateY(15px) scale(.9);
+}
 .div-1 .buttons .button h4,
 .button p {
   margin: 0;
 }
 .button h4 {
-  font-size: 1.3rem;
-  font-weight: 0;
-  color: #0a444e;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
 .button p {
   font-size: 0.8rem;
-  color: #005f72cb;
-  font-family: 'JetBrains Mono', monospace;
+  color: #ffffffaa;
+  font-family: 'Poppins', monospace;
+}
+
+@media (max-width:568px){
+.div-1 .buttons .button::after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  filter: blur(5px);
+  z-index: -1;
+  transform: translateY(6px) scale(.9);
+}
+
 }
